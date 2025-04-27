@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>繪圖教學</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button id="connectButton" style="position: absolute; top: 10px; left: 10px; z-index: 10;">Connect to Arduino</button>
+    <script>
+        document.getElementById('connectButton').addEventListener('click', () => {
+            if (typeof connectToArduino === 'function') {
+                connectToArduino();
+            } else {
+                console.error('connectToArduino function is not defined.');
+            }
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
